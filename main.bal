@@ -2,7 +2,7 @@ import ballerina/http;
 import ballerina/lang.runtime;
 import ballerina/log;
 
-service on new http:Listener(9091, timeout = 300, httpVersion = "1.1") {
+service on new http:Listener(9090, timeout = 300, httpVersion = "1.1") {
     isolated resource function post code(http:Caller caller) {
         ServerResponseGen resp = new ServerResponseGen();
         stream<http:SseEvent, error?> streamResult = new stream<http:SseEvent, error?>(resp);
